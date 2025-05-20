@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Variables</title>
+    <style>
+       
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+       
+        .card {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            width: 300px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        input {
+            width: 80%;
+            padding: 8px;
+            border-radius: 8px;
+            border: none;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #ffcc00;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e6b800;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Variables</h1>
+    <div class="container">
+        
+        <div class="card">
+            <p>Addition</p>
+            <input type="number" id="num1_add" placeholder="Enter first number">
+            <input type="number" id="num2_add" placeholder="Enter second number">
+            <button onclick="calculateSum()">Addition</button>
+            <p id="result_add"></p>
+        </div>
+
+        
+        <div class="card">
+            <p>Subtraction</p>
+            <input type="number" id="num1_sub" placeholder="Enter first number">
+            <input type="number" id="num2_sub" placeholder="Enter second number">
+            <button onclick="calculateDifference()">Subtraction</button>
+            <p id="result_sub"></p>
+        </div>
+
+        
+        <div class="card">
+            <p>Multiplication</p>
+            <input type="number" id="num1_multi" placeholder="Enter first number">
+            <input type="number" id="num2_multi" placeholder="Enter second number">
+            <button onclick="calculateProduct()">Multiplication</button>
+            <p id="result_multi"></p>
+        </div>
+
+       
+        <div class="card">
+            <p>Division</p>
+            <input type="number" id="num1_div" placeholder="Enter first number">
+            <input type="number" id="num2_div" placeholder="Enter second number">
+            <button onclick="calculateQuotient()">Division</button>
+            <p id="result_div"></p>
+        </div>
+
+        
+        <div class="card">
+            <p>Square</p>
+            <input type="number" id="num_square" placeholder="Enter a number">
+            <button onclick="calculateSquare()">Square</button>
+            <p id="result_square"></p>
+        </div>
+    </div>
+
+    <script>
+        function calculateSum() {
+            var x = parseFloat(document.getElementById("num1_add").value);
+            var y = parseFloat(document.getElementById("num2_add").value);
+            var z = x + y;
+            document.getElementById("result_add").innerHTML = "The sum is: " + z;
+        }
+
+        function calculateDifference() {
+            var x = parseFloat(document.getElementById("num1_sub").value);
+            var y = parseFloat(document.getElementById("num2_sub").value);
+            var z = x - y;
+            document.getElementById("result_sub").innerHTML = "The difference is: " + z;
+        }
+
+        function calculateProduct() {
+            var x = parseFloat(document.getElementById("num1_multi").value);
+            var y = parseFloat(document.getElementById("num2_multi").value);
+            var z = x * y;
+            document.getElementById("result_multi").innerHTML = "The product is: " + z;
+        }
+
+        function calculateQuotient() {
+            var x = parseFloat(document.getElementById("num1_div").value);
+            var y = parseFloat(document.getElementById("num2_div").value);
+            if (y !== 0) {
+                var z = x / y;
+                document.getElementById("result_div").innerHTML = "The quotient is: " + z;
+            } else {
+                document.getElementById("result_div").innerHTML = "Division by zero is not allowed.";
+            }
+        }
+
+        function calculateSquare() {
+            var num = parseFloat(document.getElementById("num_square").value);
+            var square = num * num;
+            document.getElementById("result_square").innerHTML = "The square of " + num + " is: " + square;
+        }
+    </script>
+
+</body>
+</html>
